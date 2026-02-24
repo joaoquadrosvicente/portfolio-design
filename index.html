@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio | Design & Fotografia</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #ffffff;
+            --accent-color: #ffd700; /* Destaque para detalhes */
+            --gray: #888;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 4rem 10% 2rem;
+            text-align: center;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; letter-spacing: -1px; }
+        p.subtitle { color: var(--gray); font-size: 1.1rem; }
+
+        /* Navegação/Filtros */
+        nav { margin: 2rem 0; }
+        nav button {
+            background: transparent;
+            border: 1px solid #333;
+            color: white;
+            padding: 8px 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 0 5px;
+        }
+        nav button:hover { border-color: var(--accent-color); color: var(--accent-color); }
+
+        /* Grid do Portfólio */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            padding: 0 10%;
+            margin-bottom: 5rem;
+        }
+
+        .item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            background: #1a1a1a;
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            filter: grayscale(20%);
+        }
+
+        .item:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .item:hover .overlay { opacity: 1; }
+
+        /* Sobre */
+        .about {
+            background: #111;
+            padding: 4rem 10%;
+            text-align: center;
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        @media (max-width: 600px) {
+            header { padding: 2rem 5%; }
+            .gallery { padding: 0 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>JOÃO QUADROS</h1>
+        <p class="subtitle">Design Gráfico & Fotografia Digital</p>
+        <nav>
+            <button>Tudo</button>
+            <button>Design</button>
+            <button>Fotografia</button>
+        </nav>
+    </header>
+
+    <section class="gallery">
+        <div class="item">
+            <img src="sua-foto-1.jpg" alt="Projeto de Design">
+            <div class="overlay">
+                <strong>Nome do Projeto</strong><br>
+                <span>Identidade Visual / Social Media</span>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="sua-foto-2.jpg" alt="Ensaio Fotográfico">
+            <div class="overlay">
+                <strong>Ensaio Urbano</strong><br>
+                <span>Nikon D7100 - 50mm</span>
+            </div>
+        </div>
+
+        </section>
+
+    <section class="about">
+        <h2>Sobre</h2>
+        <p>Estudante de Jornalismo e Social Media. Unindo o olhar crítico da comunicação à técnica visual do design e da fotografia.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
